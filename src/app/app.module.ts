@@ -9,14 +9,17 @@ import { MatInputModule } from '@angular/material/input'
 import { ReactiveFormsModule } from '@angular/forms'
 import { FormsModule } from '@angular/forms'
 import { MatButtonModule } from '@angular/material/button'
+import { MatSelectModule } from '@angular/material/select'
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { EditTagComponent } from './components/edit-tag/edit-tag.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EditTagComponent,
-    AppComponent
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,9 @@ import { EditTagComponent } from './components/edit-tag/edit-tag.component';
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
