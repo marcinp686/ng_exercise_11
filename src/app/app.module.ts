@@ -11,15 +11,18 @@ import { FormsModule } from '@angular/forms'
 import { MatButtonModule } from '@angular/material/button'
 import { MatSelectModule } from '@angular/material/select'
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCheckboxModule } from '@angular/material/checkbox'
 
 import { EditTagComponent } from './components/edit-tag/edit-tag.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { EditJobComponent } from './components/edit-job/edit-job.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EditTagComponent,
-    EditProductComponent
+    EditProductComponent,
+    EditJobComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
     FormsModule,
     MatButtonModule,
     MatSelectModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,20 @@
+<ng-container *ngIf="job$ | async">
+  <form fxLayout="column" [formGroup]="jobFormGroup" (submit)="onSubmit(jobFormGroup.value)" style="width: 300px">
+    <mat-form-field fxFlex appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" required formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field fxFlex appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput type="text" required formControlName="description">
+    </mat-form-field>
+
+    <div formGroupName="tags">
+      <mat-checkbox *ngFor="let item of jobTags$ | async" [formControlName]="item.id">{{item.name}}</mat-checkbox>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+
+  </form>
+</ng-container>
