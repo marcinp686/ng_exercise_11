@@ -1,0 +1,10 @@
+<h1>Edit Job Tag</h1>
+<form [formGroup]="tagFormGroup" *ngIf="detail$ | async as item" (ngSubmit)="onJobTagSubmit()">
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" required="true">
+    </mat-form-field>
+  </div>
+  <button mat-button type="submit">Submit</button>
+</form>
