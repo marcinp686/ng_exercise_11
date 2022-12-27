@@ -10,8 +10,9 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { FormsModule } from '@angular/forms'
 import { MatButtonModule } from '@angular/material/button'
 import { MatSelectModule } from '@angular/material/select'
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout'
 import { MatCheckboxModule } from '@angular/material/checkbox'
+import { MatIconModule } from '@angular/material/icon'
 
 import { EditTagComponent } from './components/edit-tag/edit-tag.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
@@ -35,7 +36,8 @@ import { EditJobComponent } from './components/edit-job/edit-job.component';
     MatButtonModule,
     MatSelectModule,
     FlexLayoutModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

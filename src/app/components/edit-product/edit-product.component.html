@@ -1,4 +1,5 @@
-<div class="product-edit-form" *ngIf="product$ | async">
+<div class="product-edit-form">
+ 
   <form [formGroup]="productFormGroup" (submit)="onSubmit(productFormGroup.value)" fxLayout="column">
 
     <mat-form-field appearance="fill" >
@@ -23,7 +24,23 @@
       <input matInput type="number" formControlName="price" required>
     </mat-form-field>
 
-    <button mat-raised-button type="submit" fxFlex color="primary">Submit</button>
+    <ng-container *ngIf="productImageUrl$ | async as image; else selectImage">
+      <ng-container [ngTemplateOutlet]="productImageLoaded" [ngTemplateOutletContext]="{$implicit: image}"></ng-container>
+    </ng-container>
 
+    <button mat-raised-button type="submit" fxFlex color="primary" [disabled]="productFormGroup.invalid">Submit</button>
+    
   </form>
+
+  <ng-template #productImageLoaded let-image>    
+    Image
+    <img [src]="image" class="product-image">
+    <button (click)="onProductImageClear()" type="button"  style="margin-bottom: 25px"><mat-icon fontIcon="clear" color="accent"></mat-icon></button>
+  </ng-template>
+  
+  <ng-template #selectImage>
+    <p>Select image</p>
+    <input type="file" (change)="onProductImageChanged($event)">
+  </ng-template>
+  
 </div>
