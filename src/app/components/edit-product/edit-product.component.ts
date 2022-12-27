@@ -21,7 +21,6 @@ export class EditProductComponent implements OnInit {
 
   public categories$!       : Observable<Category[]>;
   public productFormGroup!  : FormGroup;
- // public product$!          : Observable<Product>;
   private productImageUrl   : BehaviorSubject<SafeUrl | null> = new BehaviorSubject<SafeUrl | null>(null);
   public productImageUrl$   : Observable<SafeUrl | null> = this.productImageUrl.asObservable();
 
